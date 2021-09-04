@@ -13,5 +13,14 @@ class UserRegistrationTest {
         assertTrue(result);
     }
 
+    // UC2 Lastname validation test
+    @Test
+    public void givenLastname_When_Valid_ShouldReturn_True() {
+        UserRegistration nameValidation = new UserRegistration();
+        boolean result = nameValidation.lastname("Patil");
+        assertTrue(result);
+
+    }
+
 
 }
