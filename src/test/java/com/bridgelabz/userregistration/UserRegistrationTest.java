@@ -37,6 +37,14 @@ class UserRegistrationTest {
         assertTrue(result);
     }
 
+    // UC5 Uppercase Password validation test
+    @Test
+    public void givenUppercasePassWord_When_Valid_ShouldReturn_True() {
+        UserRegistration passWordValidation = new UserRegistration();
+        boolean result = passWordValidation.uppercasePassword("pPremapu");
+        assertTrue(result);
+    }
+
 
 
 
