@@ -53,6 +53,14 @@ class UserRegistrationTest {
         assertTrue(result);
     }
 
+    // UC7 Special Character Password validation test
+    @Test
+    public void givenSpecialCharPassWord_When_Valid_ShouldReturn_True() {
+        UserRegistration passWordValidation = new UserRegistration();
+        boolean result = passWordValidation.specialCharPassword("premp@6P");
+        assertTrue(result);
+    }
+
 
 
 
