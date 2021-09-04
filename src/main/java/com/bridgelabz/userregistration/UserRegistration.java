@@ -12,6 +12,7 @@ public class UserRegistration {
     private static final String PHONE_NUMBER_PATTERN = "^[0-9]{3} [1-9][0-9]{9}$";
     private static final String PASSWORD_PATTERN = "[a-z A-Z]{8,}$";
     private static final String UPPERCASE_PASSWORD_PATTERN = "((?=.*[A-Z]))[a-z A-Z].{7,}$";
+    private static final String NUMERIC_PASSWORD_PATTERN = "(?=.*[0-9])(?=.*[A-Z])[a-z A-Z].{7,}$";
 
     public static boolean firstname(String firstName) {
 
@@ -82,6 +83,21 @@ public class UserRegistration {
 
     }
 
+    public static boolean numericPassword(String passWord) {
+
+        // UC6 Numeric Password validation
+        Pattern pattern = Pattern.compile(NUMERIC_PASSWORD_PATTERN);
+        Matcher matcher = pattern.matcher(passWord);
+        if (matcher.matches()) {
+            System.out.println("The Given Password Is Valid");
+        } else {
+            System.out.println("The Given Password Is Not Valid");
+        }
+        return matcher.matches();
+
+    }
+
+
 
     public static void main(String[] args) {
 
@@ -107,6 +123,10 @@ public class UserRegistration {
         System.out.println(" ENTER THE PASSWORD ");
         String uppercasePassword = sc.nextLine();
         uppercasePassword(uppercasePassword);
+
+        System.out.println(" ENTER THE PASSWORD ");
+        String numericPassword = sc.nextLine();
+        numericPassword(numericPassword);
 
 
     }

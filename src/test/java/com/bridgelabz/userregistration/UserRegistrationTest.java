@@ -45,6 +45,15 @@ class UserRegistrationTest {
         assertTrue(result);
     }
 
+    // UC6 Numeric Password validation test
+    @Test
+    public void givenNumericPassWord_When_Valid_ShouldReturn_True() {
+        UserRegistration passWordValidation = new UserRegistration();
+        boolean result = passWordValidation.numericPassword("p5RemPati");
+        assertTrue(result);
+    }
+
+
 
 
 
