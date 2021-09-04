@@ -5,5 +5,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class UserRegistrationTest {
 
+    // UC1 Firstname validation test
+    @Test
+    public void givenFirstname_When_Valid_ShouldReturn_True() {
+        UserRegistration nameValidation = new UserRegistration();
+        boolean result = nameValidation.firstname("Prem");
+        assertTrue(result);
+    }
+
 
 }
