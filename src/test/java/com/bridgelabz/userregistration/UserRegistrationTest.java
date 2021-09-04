@@ -29,6 +29,15 @@ class UserRegistrationTest {
         assertTrue((result));
     }
 
+    // UC4 Password validation test
+    @Test
+    public void givenPassWord_When_Valid_ShouldReturn_True() {
+        UserRegistration passWordValidation = new UserRegistration();
+        boolean result = passWordValidation.password("PREMPATIL");
+        assertTrue(result);
+    }
+
+
 
 
 }

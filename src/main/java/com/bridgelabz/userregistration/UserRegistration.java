@@ -10,6 +10,7 @@ public class UserRegistration {
     private static final String FIRST_NAME_PATTERN = "^[A-Z]{1}[a-z A-Z]{2,}$";
     private static final String LAST_NAME_PATTERN = "^[A-Z]{1}[a-z A-Z]{2,}$";
     private static final String PHONE_NUMBER_PATTERN = "^[0-9]{3} [1-9][0-9]{9}$";
+    private static final String PASSWORD_PATTERN = "[a-z A-Z]{8,}$";
 
     public static boolean firstname(String firstName) {
 
@@ -52,6 +53,21 @@ public class UserRegistration {
 
     }
 
+    public static boolean password(String passWord) {
+
+        // UC4 Password validation
+        Pattern pattern = Pattern.compile(PASSWORD_PATTERN);
+        Matcher matcher = pattern.matcher(passWord);
+        if (matcher.matches()) {
+            System.out.println("The Given Password Is Valid");
+        } else {
+            System.out.println("The Given Password Is Not Valid");
+        }
+        return matcher.matches();
+
+    }
+
+
     public static void main(String[] args) {
 
         // Welcome to Regular Expression Program
@@ -69,7 +85,9 @@ public class UserRegistration {
         String phoneNumber = sc.nextLine();
         phoneNumber(phoneNumber);
 
-
+        System.out.println(" ENTER THE PASSWORD ");
+        String password = sc.nextLine();
+        password(password);
 
 
     }
