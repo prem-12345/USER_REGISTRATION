@@ -19,8 +19,16 @@ class UserRegistrationTest {
         UserRegistration nameValidation = new UserRegistration();
         boolean result = nameValidation.lastname("Patil");
         assertTrue(result);
-
     }
+
+    // UC3 Phone number validation test
+    @Test
+    public void givenPhoneNumber_When_Valid_ShouldReturn_True() {
+        UserRegistration phoneValidation = new UserRegistration();
+        boolean result = phoneValidation.phoneNumber("192 1580741236");
+        assertTrue((result));
+    }
+
 
 
 }
