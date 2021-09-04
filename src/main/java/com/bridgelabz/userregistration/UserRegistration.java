@@ -167,6 +167,7 @@ public class UserRegistration {
         String email = sc.nextLine();
         emailValid(email);
 
+        
 
     }
 
