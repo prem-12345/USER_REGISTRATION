@@ -61,7 +61,13 @@ class UserRegistrationTest {
         assertTrue(result);
     }
 
-
+    // UC8 Email validation test
+    @Test
+    public void givenEmail_When_Valid_ShouldReturn_True() {
+        UserRegistration emailValidation = new UserRegistration();
+        boolean result = emailValidation.emailValid("prem123@gmail.com.");
+        assertTrue(result);
+    }
 
 
 

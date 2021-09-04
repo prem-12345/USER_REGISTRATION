@@ -14,6 +14,8 @@ public class UserRegistration {
     private static final String UPPERCASE_PASSWORD_PATTERN = "((?=.*[A-Z]))[a-z A-Z].{7,}$";
     private static final String NUMERIC_PASSWORD_PATTERN = "(?=.*[0-9])(?=.*[A-Z])[a-z A-Z].{7,}$";
     private static final String SPECIAL_CHARACTER_PASSWORD = "(?=.*[$@%&!*?])(?=.*[0-9])(?=.*[A-Z])[a-z A-Z].{7,}$";
+    private static final String EMAIL_PATTERN = "^[a-zA-Z0-9]+[-.+]?[a-z0-9]*@[a-z0-9]+[.][a-z]{2,3}[.]?[a-z]{0,3}$";
+
 
     public static boolean firstname(String firstName) {
 
@@ -110,9 +112,22 @@ public class UserRegistration {
         }
         return matcher.matches();
 
-
     }
 
+    public static boolean emailValid(String email) {
+
+        // UC8  Email validation
+        Pattern pattern = Pattern.compile(EMAIL_PATTERN);
+        Matcher matcher = pattern.matcher(email);
+        if (matcher.matches()) {
+            System.out.println("The Given Email Is Valid");
+        } else {
+            System.out.println("The Given Email Is Not Valid");
+        }
+        return matcher.matches();
+
+
+    }
 
 
     public static void main(String[] args) {
@@ -147,6 +162,10 @@ public class UserRegistration {
         System.out.println(" ENTER THE PASSWORD ");
         String specialCharPass = sc.nextLine();
         specialCharPassword(specialCharPass);
+
+        System.out.println(" ENTER THE EMAIL ");
+        String email = sc.nextLine();
+        emailValid(email);
 
 
     }
