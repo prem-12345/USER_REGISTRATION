@@ -10,14 +10,13 @@ class UserRegistrationTest {
     public void givenFirstname_When_Valid_ShouldReturn_True() {
         UserRegistration nameValidation = new UserRegistration();
         try {
-            boolean result = nameValidation.firstname("Prem");
+            boolean result = nameValidation.firstname("prem");
             if (result){
                 assertTrue(result);
             }else {
-                throw new InvalidFirstNameTestException("Enter Correct First Name");
+                throw new UserRegistrationException(UserRegistrationException.ExceptionType.ENTERED_INVALID_NAME,"Enter Correct First Name");
             }
-
-        }catch (InvalidFirstNameTestException e) {
+        }catch (UserRegistrationException e) {
             e.printStackTrace();
         }
     }
@@ -31,9 +30,9 @@ class UserRegistrationTest {
             if (result) {
                 assertTrue(result);
             }else {
-                throw new InvalidLastNameTestException("Enter Correct Last Name");
+                throw new UserRegistrationException(UserRegistrationException.ExceptionType.ENTERED_INVALID_NAME,"Enter Correct Last Name");
             }
-        }catch (InvalidLastNameTestException e){
+        }catch (UserRegistrationException e){
             e.printStackTrace();
         }
     }
@@ -47,9 +46,9 @@ class UserRegistrationTest {
             if(result) {
                 assertTrue((result));
             }else {
-                throw new InvalidPhoneNumberTestException("Enter The Correct Phone Number");
+                throw new UserRegistrationException(UserRegistrationException.ExceptionType.ENTERED_INVALID_PHONE_NUMBER,"Enter Correct Phone Number");
             }
-        }catch (InvalidPhoneNumberTestException e){
+        }catch (UserRegistrationException e){
             e.printStackTrace();
         }
     }
@@ -63,9 +62,9 @@ class UserRegistrationTest {
             if (result) {
                 assertTrue(result);
             }else {
-                throw new InvalidPassWordTestException("Enter Correct Password");
+                throw new UserRegistrationException(UserRegistrationException.ExceptionType.ENTERED_INVALID_PASSWORD,"Enter Correct Password");
             }
-        }catch (InvalidPassWordTestException e){
+        }catch (UserRegistrationException e){
             e.printStackTrace();
         }
     }
@@ -79,9 +78,9 @@ class UserRegistrationTest {
             if (result) {
                 assertTrue(result);
             }else {
-                throw new InvalidPassWordTestException("Enter Correct Password");
+                throw new UserRegistrationException(UserRegistrationException.ExceptionType.ENTERED_INVALID_PASSWORD,"Enter Correct Password");
             }
-        }catch (InvalidPassWordTestException e){
+        }catch (UserRegistrationException e){
             e.printStackTrace();
         }
     }
@@ -95,9 +94,9 @@ class UserRegistrationTest {
             if (result) {
                 assertTrue(result);
             }else {
-                throw new InvalidPassWordTestException("Enter Correct Password");
+                throw new UserRegistrationException(UserRegistrationException.ExceptionType.ENTERED_INVALID_PASSWORD,"Enter Correct Password");
             }
-        }catch (InvalidPassWordTestException e){
+        }catch (UserRegistrationException e){
             e.printStackTrace();
         }
     }
@@ -111,9 +110,9 @@ class UserRegistrationTest {
             if(result) {
                 assertTrue(result);
             }else {
-                throw new InvalidPassWordTestException("Enter Correct Password");
+                throw new UserRegistrationException(UserRegistrationException.ExceptionType.ENTERED_INVALID_PASSWORD,"Enter Correct Password");
             }
-        }catch (InvalidPassWordTestException e){
+        }catch (UserRegistrationException e){
             e.printStackTrace();
         }
     }
@@ -127,41 +126,12 @@ class UserRegistrationTest {
             if (result) {
                 assertTrue(result);
             }else {
-                throw new InvalidEmailTestException("Enter The Correct Email Id");
+                throw new UserRegistrationException(UserRegistrationException.ExceptionType.ENTERED_INVALID_EMAIL,"Enter Correct Email");
             }
-        }catch (InvalidEmailTestException e){
+        }catch (UserRegistrationException e){
             e.printStackTrace();
         }
     }
 
 
-}
-class InvalidFirstNameTestException extends Exception {
-    InvalidFirstNameTestException(String message) {
-        super(message);
-    }
-}
-
-class InvalidLastNameTestException extends Exception {
-    InvalidLastNameTestException(String message) {
-        super(message);
-    }
-}
-
-class InvalidPhoneNumberTestException extends Exception {
-    InvalidPhoneNumberTestException(String message){
-        super(message);
-    }
-}
-
-class InvalidPassWordTestException extends Exception {
-    InvalidPassWordTestException (String message){
-        super(message);
-    }
-}
-
-class InvalidEmailTestException extends Exception {
-    InvalidEmailTestException (String message){
-        super(message);
-    }
 }
